@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace cdrv3
 {
-    public partial class Form1 : Form
+    public partial class form_Home : Form
     {
-        public Form1()
+        public form_Home()
         {
             InitializeComponent();
+        }
+
+        private void btn_NewCase_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
