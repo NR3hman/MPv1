@@ -24,6 +24,21 @@ namespace cdrv3.Forms
             home.ShowDialog();
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // form_NewCase
+            // 
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(373, 318);
+            this.Name = "form_NewCase";
+            this.Text = "New Case";
+            this.UseWaitCursor = true;
+            this.ResumeLayout(false);
+
+        }
+
        
     }
 }
