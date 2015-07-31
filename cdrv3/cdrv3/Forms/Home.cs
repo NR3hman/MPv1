@@ -19,7 +19,9 @@ namespace cdrv3
 
         private void btn_NewCase_Click(object sender, EventArgs e)
         {
-
+            var nc = new cdrv3.Forms.form_NewCase();
+            this.Hide();
+            nc.ShowDialog();
         }
     }
 }

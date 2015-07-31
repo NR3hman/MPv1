@@ -17,9 +17,13 @@ namespace cdrv3.Forms
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btn_Home_Click(object sender, EventArgs e)
         {
-
+            var home = new cdrv3.form_Home();
+            this.Hide();
+            home.ShowDialog();
         }
+
+       
     }
 }
