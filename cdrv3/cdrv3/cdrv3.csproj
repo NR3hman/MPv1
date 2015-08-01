@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cdrv3DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database\CreateDatabase.cs" />
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>

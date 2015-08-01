@@ -16,5 +16,19 @@ namespace cdrv3.Forms
         {
             InitializeComponent();
         }
+
+        private void btn_Home_Click(object sender, EventArgs e)
+        {
+            var home = new cdrv3.form_Home();
+            this.Hide();
+            home.ShowDialog();
+        }
+
+        private void btn_CreateDatabase_Click(object sender, EventArgs e)
+        {
+            
+            //Database.CreateDatabase createdb = new Database.CreateDatabase();
+            MessageBox.Show("Need to start from here tomorrow");
+        }
     }
 }

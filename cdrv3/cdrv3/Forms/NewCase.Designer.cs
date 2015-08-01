@@ -60,6 +60,7 @@
             this.btn_Home.TabIndex = 2;
             this.btn_Home.Text = "Home";
             this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // btn_CreateDatabase
             // 
@@ -70,6 +71,7 @@
             this.btn_CreateDatabase.TabIndex = 3;
             this.btn_CreateDatabase.Text = "Create Database";
             this.btn_CreateDatabase.UseVisualStyleBackColor = false;
+            this.btn_CreateDatabase.Click += new System.EventHandler(this.btn_CreateDatabase_Click);
             // 
             // form_NewCase
             // 
