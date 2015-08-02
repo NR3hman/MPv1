@@ -17,9 +17,25 @@ namespace cdrv3.Forms
             InitializeComponent();
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txb_SelectedFile.Text = openFileDialog1.FileName;
+            }
+
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }

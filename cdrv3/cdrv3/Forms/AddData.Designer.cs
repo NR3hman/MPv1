@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lb_SelectFile = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btn_SelectFile = new System.Windows.Forms.Button();
+            this.txb_SelectedFile = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lb_SelectFile
@@ -43,17 +43,23 @@
             this.lb_SelectFile.TabIndex = 0;
             this.lb_SelectFile.Text = "Select File:";
             // 
-            // textBox1
+            // btn_SelectFile
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 20);
-            this.textBox1.TabIndex = 1;
+            this.btn_SelectFile.Location = new System.Drawing.Point(446, 46);
+            this.btn_SelectFile.Name = "btn_SelectFile";
+            this.btn_SelectFile.Size = new System.Drawing.Size(75, 23);
+            this.btn_SelectFile.TabIndex = 2;
+            this.btn_SelectFile.Text = "Select";
+            this.btn_SelectFile.UseVisualStyleBackColor = true;
+            this.btn_SelectFile.Click += new System.EventHandler(this.button1_Click);
             // 
-            // openFileDialog1
+            // txb_SelectedFile
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.txb_SelectedFile.Location = new System.Drawing.Point(122, 49);
+            this.txb_SelectedFile.Name = "txb_SelectedFile";
+            this.txb_SelectedFile.Size = new System.Drawing.Size(318, 20);
+            this.txb_SelectedFile.TabIndex = 3;
+            this.txb_SelectedFile.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // form_AddData
             // 
@@ -61,7 +67,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(533, 271);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txb_SelectedFile);
+            this.Controls.Add(this.btn_SelectFile);
             this.Controls.Add(this.lb_SelectFile);
             this.Name = "form_AddData";
             this.Text = "AddData";
@@ -73,7 +80,7 @@
         #endregion
 
         private System.Windows.Forms.Label lb_SelectFile;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btn_SelectFile;
+        private System.Windows.Forms.TextBox txb_SelectedFile;
     }
 }
