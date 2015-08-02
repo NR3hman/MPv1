@@ -64,6 +64,12 @@
       <DependentUpon>cdrv3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Database\CreateDatabase.cs" />
+    <Compile Include="Forms\AddData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddData.Designer.cs">
+      <DependentUpon>AddData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddData.resx">
+      <DependentUpon>AddData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

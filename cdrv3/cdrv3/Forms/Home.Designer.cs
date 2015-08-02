@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_NewCase = new System.Windows.Forms.Button();
+            this.btn_ParseNow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_NewCase
@@ -42,12 +43,24 @@
             this.btn_NewCase.UseVisualStyleBackColor = false;
             this.btn_NewCase.Click += new System.EventHandler(this.btn_NewCase_Click);
             // 
+            // btn_ParseNow
+            // 
+            this.btn_ParseNow.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_ParseNow.Location = new System.Drawing.Point(152, 153);
+            this.btn_ParseNow.Name = "btn_ParseNow";
+            this.btn_ParseNow.Size = new System.Drawing.Size(181, 85);
+            this.btn_ParseNow.TabIndex = 1;
+            this.btn_ParseNow.Text = "Parse Now";
+            this.btn_ParseNow.UseVisualStyleBackColor = false;
+            this.btn_ParseNow.Click += new System.EventHandler(this.btn_ParseNow_Click);
+            // 
             // form_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(514, 350);
+            this.Controls.Add(this.btn_ParseNow);
             this.Controls.Add(this.btn_NewCase);
             this.Name = "form_Home";
             this.Text = "Home";
@@ -58,6 +71,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_NewCase;
+        private System.Windows.Forms.Button btn_ParseNow;
     }
 }
 

@@ -23,5 +23,12 @@ namespace cdrv3
             this.Hide();
             nc.ShowDialog();
         }
+
+        private void btn_ParseNow_Click(object sender, EventArgs e)
+        {
+            var pn = new cdrv3.Forms.form_AddData();
+            this.Hide();
+            pn.ShowDialog();
+        }
     }
 }
