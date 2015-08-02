@@ -26,8 +26,7 @@ namespace cdrv3.Forms
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 txb_SelectedFile.Text = openFileDialog1.FileName;
-            }
-
+            
             
         }
 

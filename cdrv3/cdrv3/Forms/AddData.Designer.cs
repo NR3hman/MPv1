@@ -45,12 +45,13 @@
             // 
             // btn_SelectFile
             // 
-            this.btn_SelectFile.Location = new System.Drawing.Point(446, 46);
+            this.btn_SelectFile.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_SelectFile.Location = new System.Drawing.Point(462, 36);
             this.btn_SelectFile.Name = "btn_SelectFile";
-            this.btn_SelectFile.Size = new System.Drawing.Size(75, 23);
+            this.btn_SelectFile.Size = new System.Drawing.Size(75, 49);
             this.btn_SelectFile.TabIndex = 2;
             this.btn_SelectFile.Text = "Select";
-            this.btn_SelectFile.UseVisualStyleBackColor = true;
+            this.btn_SelectFile.UseVisualStyleBackColor = false;
             this.btn_SelectFile.Click += new System.EventHandler(this.button1_Click);
             // 
             // txb_SelectedFile
@@ -66,7 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(533, 271);
+            this.ClientSize = new System.Drawing.Size(594, 405);
             this.Controls.Add(this.txb_SelectedFile);
             this.Controls.Add(this.btn_SelectFile);
             this.Controls.Add(this.lb_SelectFile);
