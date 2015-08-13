@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cdrv3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CaseDetails">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="CaseName" Type="varchar" MaxLength="50" />
+          <Property Name="InvestigatorName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="cdrv3ModelStoreContainer">
+          <EntitySet Name="CaseDetails" EntityType="Self.CaseDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cdrv3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CaseDetail">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="true" />
+          <Property Name="CaseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvestigatorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CD1" Relationship="cdrv3Model.CaseDetailCD1" FromRole="CaseDetail" ToRole="CD1" />
+        </EntityType>
+        <EntityContainer Name="cdrv3Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CaseDetails" EntityType="Self.CaseDetail" />
+          <EntitySet Name="CD1" EntityType="cdrv3Model.CD1" />
+          <AssociationSet Name="CaseDetailCD1" Association="cdrv3Model.CaseDetailCD1">
+            <End Role="CaseDetail" EntitySet="CaseDetails" />
+            <End Role="CD1" EntitySet="CD1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CD1">
+          <Key>
+            <PropertyRef Name="LineId" />
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="LineId" Type="Int32" Nullable="false" />
+          <Property Name="CaseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateofCall" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CaseDetail" Relationship="cdrv3Model.CaseDetailCD1" FromRole="CD1" ToRole="CaseDetail" />
+          <Property Name="CaseId" Type="String" Nullable="false" />
+          <Property Name="InvestigatorName" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="CaseDetailCD1">
+          <End Type="cdrv3Model.CaseDetail" Role="CaseDetail" Multiplicity="1" />
+          <End Type="cdrv3Model.CD1" Role="CD1" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cdrv3ModelStoreContainer" CdmEntityContainer="cdrv3Entities">
+          <EntitySetMapping Name="CaseDetails">
+            <EntityTypeMapping TypeName="cdrv3Model.CaseDetail">
+              <MappingFragment StoreEntitySet="CaseDetails">
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CaseName" ColumnName="CaseName" />
+                <ScalarProperty Name="InvestigatorName" ColumnName="InvestigatorName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CaseDetailCD1" TypeName="cdrv3Model.CaseDetailCD1" StoreEntitySet="CaseDetails">
+            <EndProperty Name="CaseDetail">
+              <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="CD1">
+            <EntityTypeMapping TypeName="IsTypeOf(cdrv3Model.CD1)">
+              <MappingFragment StoreEntitySet="CaseDetails">
+                <ScalarProperty Name="InvestigatorName" ColumnName="InvestigatorName" />
+                <ScalarProperty Name="CaseName" ColumnName="CaseName" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
